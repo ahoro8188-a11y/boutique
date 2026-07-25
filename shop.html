@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — Wren &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Wren &amp; Co.</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="is-current">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <span aria-hidden="true">🔍</span>
+      <span aria-hidden="true">🛍️</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ PAGE BANNER ============ -->
+<section class="page-banner">
+  <p class="script-tag">the full collection</p>
+  <h1>Shop</h1>
+</section>
+
+<!-- ============ FILTERS ============ -->
+<section class="shop-page">
+  <div class="filter-row" id="filterRow">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="tops">Tops</button>
+    <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+    <button class="filter-btn" data-filter="accessories">Accessories</button>
+    <button class="filter-btn" data-filter="bags">Bags</button>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+    <div class="product-card" data-category="tops">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=450&q=80" alt="Linen wrap top"></div>
+      <h3>Linen Wrap Top</h3>
+      <p class="price">$48</p>
+    </div>
+    <div class="product-card" data-category="bottoms">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=450&q=80" alt="Patterned midi skirt"></div>
+      <h3>Patterned Midi Skirt</h3>
+      <p class="price">$56</p>
+    </div>
+    <div class="product-card" data-category="accessories">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=450&q=80" alt="Layered necklaces"></div>
+      <h3>Layered Necklace Set</h3>
+      <p class="price">$32</p>
+    </div>
+    <div class="product-card" data-category="bags">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=450&q=80" alt="Woven crossbody bag"></div>
+      <h3>Woven Crossbody Bag</h3>
+      <p class="price">$64</p>
+    </div>
+    <div class="product-card" data-category="tops">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=450&q=80" alt="Embroidered blouse"></div>
+      <h3>Embroidered Blouse</h3>
+      <p class="price">$52</p>
+    </div>
+    <div class="product-card" data-category="bottoms">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=450&q=80" alt="Wide-leg linen pants"></div>
+      <h3>Wide-Leg Linen Pants</h3>
+      <p class="price">$60</p>
+    </div>
+    <div class="product-card" data-category="accessories">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=450&q=80" alt="Handmade hair clips"></div>
+      <h3>Handmade Hair Clip Set</h3>
+      <p class="price">$18</p>
+    </div>
+    <div class="product-card" data-category="bags">
+      <div class="product-photo"><img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=450&q=80" alt="Straw tote bag"></div>
+      <h3>Straw Tote Bag</h3>
+      <p class="price">$44</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-bottom">
+    <p>© 2026 Wren &amp; Co.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
