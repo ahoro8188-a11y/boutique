@@ -526,7 +526,7 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   position: relative;
   z-index: 2;
   padding: 0 8vw 12vh;
-  max-width: 18ch;
+  max-width: min(760px, 92vw);
 }
 .hero-cinematic-copy h1{
   font-size: clamp(3.4rem, 8vw, 7.2rem);
