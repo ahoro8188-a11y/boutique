@@ -357,7 +357,7 @@ function initNav() {
 
 function initReveal() {
   const revealTargets = document.querySelectorAll(
-    ".feature-text, .wavy-banner, .category-strip, .split-sale, .arrivals-teaser, .lookbook, .press-strip, .newsletter, .shop-page, .about-story, .values, .mini-cta, .contact-page"
+    ".feature-text, .wavy-banner, .category-strip, .split-sale, .arrivals-teaser, .lookbook, .press-strip, .newsletter, .shop-page, .about-story, .values, .mini-cta, .contact-page, .statement, .stats, .sticky-story-copy"
   );
   revealTargets.forEach((el) => el.classList.add("reveal"));
   const observer = new IntersectionObserver((entries) => {
