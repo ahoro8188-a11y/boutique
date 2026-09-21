@@ -2,24 +2,31 @@
    TOKENS
    =========================================== */
 :root{
-  --ivory: #F8F3EA;
-  --cream: #F3EBDD;
-  --paper: #EFE6D6;
-  --ink: #1C1612;
-  --muted: #6B5C52;
-  --gold: #A57C3B;
-  --gold-soft: #C4A46A;
-  --copper: #8E4636;
-  --blush: #E8C9BC;
-  --burgundy: #5C2428;
-  --wine: #3E181B;
+  --ivory: #FBF3E4;
+  --cream: #F4E2B8;
+  --paper: #EED9A4;
+  --ink: #2C140C;
+  --muted: #6E4A32;
+  --gold: #D4A017;
+  --gold-soft: #E8C14A;
+  --copper: #C4452D;
+  --blush: #F0B7A0;
+  --burgundy: #B3202A;
+  --wine: #1B365D;
+  --rani: #B5265A;
+  --peacock: #0F6B63;
+  --mehendi: #4A5C28;
+  --marigold: #E0A106;
 
-  --font-display: "Cormorant Garamond", serif;
-  --font-body: "Outfit", sans-serif;
+  --font-display: "Fraunces", "Tiro Devanagari Hindi", serif;
+  --font-body: "Mukta", sans-serif;
+  --font-hindi: "Tiro Devanagari Hindi", serif;
 
   --container: 1180px;
-  --shadow: 0 30px 70px rgba(28,22,18,.16);
+  --shadow: 0 30px 70px rgba(27,54,93,.18);
   --ease: cubic-bezier(.22,1,.36,1);
+  --jaali: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath fill='none' stroke='%23B3202A' stroke-opacity='.18' stroke-width='1.2' d='M36 4 L68 36 L36 68 L4 36 Z M36 16 L56 36 L36 56 L16 36 Z'/%3E%3Ccircle cx='36' cy='36' r='4' fill='%23D4A017' fill-opacity='.28'/%3E%3C/svg%3E");
+  --bandhani: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ccircle cx='6' cy='6' r='2.2' fill='%23B3202A'/%3E%3Ccircle cx='20' cy='20' r='2.2' fill='%23D4A017'/%3E%3Ccircle cx='20' cy='6' r='1.4' fill='%230F6B63'/%3E%3Ccircle cx='6' cy='20' r='1.4' fill='%23B5265A'/%3E%3C/svg%3E");
 }
 
 *,*::before,*::after{ box-sizing: border-box; }
@@ -44,8 +51,9 @@ body::before{
   position:fixed;
   inset:0;
   z-index:1;
-  opacity:.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:.5;
+  background-image: var(--jaali);
+  background-size: 72px 72px;
 }
 
 h1,h2,h3{ font-family: var(--font-display); margin:0; line-height:1.08; font-weight:500; }
@@ -59,13 +67,31 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   overflow:hidden; clip:rect(0,0,0,0); border:0;
 }
 
+.hindi{
+  font-family: var(--font-hindi);
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 1.05rem;
+}
 .eyebrow{
   margin: 0 0 .75rem;
   font-size: .72rem;
-  letter-spacing: .28em;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--sindoor, var(--burgundy));
   font-weight: 500;
+}
+.pattern-rail{
+  height: 9px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--marigold) 0 10px,
+    var(--burgundy) 10px 20px,
+    var(--wine) 20px 30px,
+    var(--peacock) 30px 40px,
+    var(--rani) 40px 50px,
+    var(--gold-soft) 50px 60px
+  );
 }
 .eyebrow-light{ color: var(--gold-soft); }
 
@@ -74,7 +100,7 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   align-items:center;
   justify-content:center;
   padding: .95rem 1.7rem;
-  border-radius: 0;
+  border-radius: 2px 14px 2px 14px;
   font-weight: 500;
   font-size: .78rem;
   letter-spacing: .16em;
@@ -85,8 +111,13 @@ button, input, textarea, select{ font: inherit; color: inherit; }
 }
 .btn:hover{ transform: translateY(-2px); }
 .btn-primary{ background: var(--burgundy); color: var(--ivory); }
-.btn-primary:hover{ background: var(--wine); }
-.btn-cream{ background: var(--ivory); color: var(--burgundy); }
+.btn-primary:hover{ background: var(--rani); }
+.btn-cream{ background: var(--ivory); color: var(--wine); }
+.btn-ghost{
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--marigold);
+}
 .btn-ghost{
   background: transparent;
   color: var(--ink);
@@ -109,20 +140,22 @@ button, input, textarea, select{ font: inherit; color: inherit; }
    ANNOUNCE + NAV
    =========================================== */
 .announce-bar{
-  background: var(--burgundy);
+  background: var(--wine);
   color: var(--ivory);
   text-align:center;
   padding: .55rem 1rem;
   font-size: .72rem;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
+  background-image: var(--bandhani);
+  background-size: 28px 28px;
 }
 .announce-bar p{ margin:0; }
 
 .site-nav{
-  background: rgba(248,243,234,.92);
+  background: rgba(251,243,228,.94);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(28,22,18,.08);
+  border-bottom: 2px solid var(--marigold);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -152,7 +185,7 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   padding-bottom: 4px;
   border-bottom: 1px solid transparent;
 }
-.nav-links a.is-current{ border-bottom-color: var(--gold); }
+.nav-links a.is-current{ border-bottom-color: var(--burgundy); }
 .nav-icons{ display:flex; gap: .35rem; align-items:center; }
 .icon-btn{
   position:relative;
@@ -382,8 +415,9 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   margin: 0 auto 5rem;
   padding: 3.5rem 1.5rem;
   text-align:center;
-  border: 1px solid rgba(165,124,59,.35);
+  border: 2px solid var(--marigold);
   background: var(--cream);
+  background-image: var(--jaali);
 }
 .newsletter h2{ font-size: 2.4rem; font-style: italic; color: var(--burgundy); }
 .newsletter p{ color: var(--muted); }
@@ -520,7 +554,7 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(28,22,18,.18) 0%, rgba(28,22,18,.55) 70%, rgba(28,22,18,.72) 100%);
+  background: linear-gradient(180deg, rgba(27,54,93,.2) 0%, rgba(44,20,12,.35) 45%, rgba(179,32,42,.55) 100%);
 }
 .hero-cinematic-copy{
   position: relative;
@@ -627,6 +661,8 @@ button, input, textarea, select{ font: inherit; color: inherit; }
 .scroll-horizon{
   height: 280vh;
   background: var(--wine);
+  background-image: var(--bandhani);
+  background-size: 28px 28px;
   color: var(--ivory);
 }
 .horizon-pin{
@@ -719,7 +755,7 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(28,22,18,.35), rgba(28,22,18,.5));
+  background: linear-gradient(180deg, rgba(27,54,93,.4), rgba(179,32,42,.45));
 }
 .page-banner-copy{ position: relative; z-index: 1; }
 .page-banner .eyebrow{ color: var(--gold-soft); }
@@ -809,6 +845,7 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   aspect-ratio: 3/4;
   margin-bottom: .9rem;
   background: var(--paper);
+  box-shadow: 0 0 0 1px var(--marigold), 0 0 0 6px var(--ivory), 0 0 0 7px var(--burgundy);
 }
 .product-photo img{ width:100%; height:100%; object-fit:cover; transition: transform .6s var(--ease); }
 .product-card:hover .product-photo img{ transform: scale(1.05); }
@@ -872,7 +909,7 @@ button, input, textarea, select{ font: inherit; color: inherit; }
   gap: 2.5rem;
   max-width: var(--container);
   margin: 0 auto 4rem;
-  border: 1px solid rgba(165,124,59,.25);
+  border: 2px solid var(--peacock);
 }
 .value h3{ font-size: 1.5rem; margin-bottom: .5rem; }
 .value p{ font-size: .95rem; color: var(--muted); max-width: 28ch; margin: 0; }

@@ -1,78 +1,78 @@
 const PRODUCTS = [
   {
-    id: "linen-wrap",
-    name: "Linen Wrap Top",
-    price: 148,
+    id: "bagru-kurta",
+    name: "Bagru Booti Kurta",
+    price: 4800,
     category: "tops",
     badge: "New",
-    image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=700&q=80",
-    blurb: "Washed European linen, cut to wrap and tie. Intended for warm afternoons and layered evenings."
+    image: "https://images.unsplash.com/photo-1603252109360-909baaf261c7?w=700&q=80",
+    blurb: "Hand-block printed in Sanganer on washed cotton. Meant for warm afternoons and courtyard evenings."
   },
   {
-    id: "midi-skirt",
-    name: "Patterned Midi Skirt",
-    price: 186,
+    id: "ikat-skirt",
+    name: "Pochampally Ikat Skirt",
+    price: 6200,
     category: "bottoms",
     image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=700&q=80",
-    blurb: "A fluid midi with a hidden waist and a print exclusive to this drop."
+    blurb: "A fluid midi in Telangana ikat, with a hidden waist and a warp that will not repeat."
   },
   {
-    id: "necklace-set",
-    name: "Layered Necklace Set",
-    price: 92,
+    id: "temple-set",
+    name: "Temple Necklace Set",
+    price: 3400,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=700&q=80",
-    blurb: "Two fine chains in warm gold-fill, meant to live on together."
+    image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=80",
+    blurb: "Two warm-gold temple chains, meant to live on together."
   },
   {
-    id: "crossbody",
-    name: "Woven Crossbody",
-    price: 214,
+    id: "jhola",
+    name: "Market Jhola",
+    price: 2800,
     category: "bags",
     badge: "Limited",
-    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700&q=80",
-    blurb: "Hand-woven leather with a quiet silhouette and room for the day."
+    image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=700&q=80",
+    blurb: "Woven jute with leather handles. Made for bazaar mornings."
   },
   {
-    id: "embroidered",
-    name: "Embroidered Blouse",
-    price: 168,
-    compare: 198,
+    id: "chikan-kurta",
+    name: "Lucknow Chikankari Kurta",
+    price: 5600,
+    compare: 7200,
     category: "tops",
     badge: "Archive",
     image: "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=700&q=80",
-    blurb: "Cotton voile with tonal embroidery along the yoke. Last sizes from summer."
+    blurb: "White-on-white chikankari on cotton mul. Last sizes from summer."
   },
   {
-    id: "linen-pants",
-    name: "Wide-Leg Linen Trousers",
-    price: 188,
+    id: "palazzo",
+    name: "Indigo Palazzo",
+    price: 3900,
     category: "bottoms",
     image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=700&q=80",
-    blurb: "Full-leg linen with a tailored waist. Softens with every wear."
+    blurb: "Full-leg indigo cotton with a tailored waist. Softens with every wash."
   },
   {
-    id: "hair-clips",
-    name: "Handmade Clip Set",
-    price: 48,
+    id: "lac-pins",
+    name: "Jaipur Lac Pin Set",
+    price: 980,
     category: "accessories",
     image: "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=700&q=80",
-    blurb: "A pair of resin clips, poured in small batches in the studio."
+    blurb: "A pair of lacquer pins, poured in small batches in the old city."
   },
   {
-    id: "straw-tote",
-    name: "Straw Tote",
-    price: 128,
+    id: "kolhapuri-tote",
+    name: "Kolhapuri Tote",
+    price: 4200,
     category: "bags",
-    image: "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=700&q=80",
-    blurb: "Open-weave raffia with leather handles. Made for market mornings."
+    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700&q=80",
+    blurb: "Hand-woven leather with a quiet silhouette and room for the day."
   }
 ];
 
 const CART_KEY = "wren-bag";
 const WISH_KEY = "wren-wish";
 
-const money = (n) => `$${n}`;
+const money = (n) => `₹${n.toLocaleString("en-IN")}`;
 
 const read = (key, fallback) => {
   try {
@@ -133,7 +133,7 @@ function addToCart(id, qty = 1) {
   write(CART_KEY, cart);
   renderBagCount();
   renderCart();
-  toast(`${product.name} added to bag`);
+      toast(`${product.name} added to your jhola`);
 }
 
 function setQty(id, qty) {
@@ -197,7 +197,7 @@ function renderCart() {
   if (!mount) return;
   const cart = getCart();
   if (!cart.length) {
-    mount.innerHTML = `<p class="cart-empty">Your bag is empty. The new edit is waiting.</p>`;
+    mount.innerHTML = `<p class="cart-empty">Your jhola is empty. The new edit is waiting.</p>`;
   } else {
     mount.innerHTML = cart.map((line) => {
       const product = findProduct(line.id);
@@ -227,9 +227,9 @@ function renderCart() {
   if (subtotalEl) subtotalEl.textContent = money(subtotal);
   const note = document.querySelector("[data-shipping-note]");
   if (note) {
-    note.textContent = subtotal >= 150
-      ? "Complimentary shipping applied."
-      : `Add ${money(Math.max(0, 150 - subtotal))} for complimentary shipping.`;
+    note.textContent = subtotal >= 4999
+      ? "Free shipping applied."
+      : `Add ${money(Math.max(0, 4999 - subtotal))} for free shipping.`;
   }
 }
 
@@ -432,14 +432,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (event.target.closest("[data-checkout]")) {
       if (!getCart().length) {
-        toast("Your bag is empty");
+        toast("Your jhola is empty");
         return;
       }
       write(CART_KEY, []);
       renderBagCount();
       renderCart();
       closeAllPanels();
-      toast("Order received — a stylist will confirm shortly");
+      toast("Order received — we'll confirm on WhatsApp shortly");
     }
   });
 
@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const note = document.getElementById("formNote");
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      note.textContent = "Thank you. The atelier will reply within a day.";
+      note.textContent = "Shukriya. The house will reply within a day.";
       contactForm.reset();
     });
   }
@@ -466,7 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const note = document.getElementById("newsletterNote");
     newsletterForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      note.textContent = "You are on the private list.";
+      note.textContent = "You are on the list — pehle aap.";
       newsletterForm.reset();
     });
   }

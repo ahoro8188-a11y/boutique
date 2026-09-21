@@ -11,6 +11,7 @@ function injectMotionChrome() {
   wrap.innerHTML = `
     <div class="preloader" data-preloader>
       <p class="preloader-mark">Wren &amp; Co.</p>
+      <p class="hindi" style="margin:0;opacity:.8">नमस्ते</p>
       <p class="preloader-count" data-loader-count>00</p>
     </div>
     <div class="scroll-progress" data-progress></div>
