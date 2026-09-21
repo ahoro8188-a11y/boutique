@@ -3,27 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Wren &amp; Co.</title>
+<title>Visit — Wren &amp; Co.</title>
+<meta name="description" content="Visit the Wren &amp; Co. atelier in Asheville or book a private fitting.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
+<div class="announce-bar">
+  <p>Complimentary shipping on orders over $150 &nbsp;·&nbsp; Private fittings by appointment</p>
+</div>
+
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Wren &amp; Co.</a>
     <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="is-current">Contact</a>
+      <a href="shop.html">Collection</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html" class="is-current">Visit</a>
     </nav>
     <div class="nav-icons">
-      <span aria-hidden="true">🔍</span>
-      <span aria-hidden="true">🛍️</span>
+      <button class="icon-btn" data-open-search type="button" aria-label="Search the collection">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+      </button>
+      <button class="icon-btn" data-open-cart type="button" aria-label="Open bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+        <span class="bag-count" data-bag-count hidden>0</span>
+      </button>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -31,36 +40,72 @@
   </div>
 </header>
 
-<!-- ============ PAGE BANNER ============ -->
 <section class="page-banner">
-  <p class="script-tag">say hello</p>
-  <h1>Get In Touch</h1>
+  <p class="eyebrow">Visit</p>
+  <h1>The house is open.</h1>
+  <p>Walk in Wednesday through Sunday, or reserve a private hour.</p>
 </section>
 
-<!-- ============ CONTACT ============ -->
 <section class="contact-page">
   <div class="contact-info">
-    <p class="script-tag">visit us</p>
-    <h2>We'd love to see you<br>in the shop</h2>
-    <p class="contact-detail">📍 118 Birchwood Lane, Asheville, NC</p>
-    <p class="contact-detail">✉️ hello@wrenandco.com</p>
-    <p class="contact-detail">📞 (828) 555-0173</p>
-    <p class="contact-hours">Wed–Sun, 11am–6pm</p>
+    <p class="eyebrow">Asheville</p>
+    <h2>We would love to dress you in person.</h2>
+    <p class="contact-detail">118 Birchwood Lane, Asheville, NC</p>
+    <p class="contact-detail"><a href="mailto:hello@wrenandco.com">hello@wrenandco.com</a></p>
+    <p class="contact-detail"><a href="tel:+18285550173">(828) 555-0173</a></p>
+    <p class="contact-hours">Wednesday–Sunday, 11am–6pm<br>Private fittings: Tuesday by appointment</p>
   </div>
 
   <form class="contact-form" id="contactForm">
-    <input type="text" name="name" placeholder="Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Your message" rows="4" required></textarea>
+    <label>
+      Name
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      I am writing about
+      <select name="topic">
+        <option>A private fitting</option>
+        <option>An order</option>
+        <option>Press or partnership</option>
+        <option>Something else</option>
+      </select>
+    </label>
+    <label>
+      Message
+      <textarea name="message" rows="4" required></textarea>
+    </label>
     <button type="submit" class="btn btn-primary">Send message</button>
     <p class="form-note" id="formNote" aria-live="polite"></p>
   </form>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="nav-logo">Wren &amp; Co.</p>
+      <p>An independent atelier boutique in Asheville, offering small-batch clothing and objects made to last.</p>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>118 Birchwood Lane<br>Asheville, NC<br>Wed–Sun, 11–6</p>
+    </div>
+    <div>
+      <h3>House</h3>
+      <a href="shop.html">Collection</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Private fittings</a>
+    </div>
+    <div>
+      <h3>Care</h3>
+      <p>Complimentary shipping over $150<br>Complimentary returns within 14 days</p>
+    </div>
+  </div>
   <div class="footer-bottom">
-    <p>© 2026 Wren &amp; Co.</p>
+    <p>© 2026 Wren &amp; Co. All rights reserved.</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>

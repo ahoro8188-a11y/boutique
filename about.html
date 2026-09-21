@@ -3,27 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Wren &amp; Co.</title>
+<title>Atelier — Wren &amp; Co.</title>
+<meta name="description" content="The Wren &amp; Co. atelier: small-batch fashion, natural materials, and fair partnerships since 2019.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
+<div class="announce-bar">
+  <p>Complimentary shipping on orders over $150 &nbsp;·&nbsp; Private fittings by appointment</p>
+</div>
+
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Wren &amp; Co.</a>
     <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html" class="is-current">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="shop.html">Collection</a>
+      <a href="about.html" class="is-current">Atelier</a>
+      <a href="contact.html">Visit</a>
     </nav>
     <div class="nav-icons">
-      <span aria-hidden="true">🔍</span>
-      <span aria-hidden="true">🛍️</span>
+      <button class="icon-btn" data-open-search type="button" aria-label="Search the collection">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+      </button>
+      <button class="icon-btn" data-open-cart type="button" aria-label="Open bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+        <span class="bag-count" data-bag-count hidden>0</span>
+      </button>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -31,54 +40,72 @@
   </div>
 </header>
 
-<!-- ============ PAGE BANNER ============ -->
 <section class="page-banner">
-  <p class="script-tag">who we are</p>
-  <h1>Our Story</h1>
+  <p class="eyebrow">Est. 2019</p>
+  <h1>The atelier.</h1>
+  <p>A house built on fewer, better things.</p>
 </section>
 
-<!-- ============ STORY ============ -->
 <section class="about-story">
   <div class="about-story-photo">
-    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=550&q=80" alt="Boutique owner arranging clothing on a rack">
+    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80" alt="Atelier interior with clothing on a rack">
   </div>
   <div class="about-story-copy">
-    <p class="script-tag">est. 2019</p>
-    <h2>Small batch, made with intention</h2>
-    <p>Wren &amp; Co. started as a market stall selling hand-picked vintage finds and pieces from local makers. Today, we still work directly with small studios and independent designers — no mass production, no filler.</p>
-    <p>Every drop is limited. Once it's gone, it's gone — and that's exactly how we like it.</p>
+    <p class="eyebrow">Our story</p>
+    <h2>Small batch, made with intention.</h2>
+    <p>Wren &amp; Co. began as a weekend stall of vintage finds and pieces from local makers. We still work the same way: directly with independent studios, no mass production, no filler.</p>
+    <p>Every drop is limited. Once it is gone, it is gone — and that is exactly how we like it.</p>
+    <a href="contact.html" class="link-underline">Book a private fitting</a>
   </div>
 </section>
 
-<!-- ============ VALUES ============ -->
 <section class="values">
   <div class="value">
-    <span class="value-icon">🧵</span>
-    <h3>Small Batch</h3>
+    <p class="eyebrow">01</p>
+    <h3>Small batch</h3>
     <p>Limited runs from independent makers, never mass-produced.</p>
   </div>
   <div class="value">
-    <span class="value-icon">🌿</span>
-    <h3>Natural Materials</h3>
-    <p>Linen, cotton, and wool sourced with care for how they age and wear.</p>
+    <p class="eyebrow">02</p>
+    <h3>Natural materials</h3>
+    <p>Linen, cotton, and wool chosen for how they age against the body.</p>
   </div>
   <div class="value">
-    <span class="value-icon">🤍</span>
-    <h3>Fair Partnerships</h3>
-    <p>We work directly with makers and pay fairly for their craft.</p>
+    <p class="eyebrow">03</p>
+    <h3>Fair partnerships</h3>
+    <p>We visit our makers and pay properly for their craft.</p>
   </div>
 </section>
 
-<!-- ============ MINI CTA ============ -->
 <section class="mini-cta">
-  <h2>Come find your next favorite piece</h2>
-  <a href="shop.html" class="btn btn-primary">Shop the Collection</a>
+  <p class="eyebrow">The collection</p>
+  <h2>Come find the piece you keep.</h2>
+  <a href="shop.html" class="btn btn-primary">Shop the collection</a>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="nav-logo">Wren &amp; Co.</p>
+      <p>An independent atelier boutique in Asheville, offering small-batch clothing and objects made to last.</p>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>118 Birchwood Lane<br>Asheville, NC<br>Wed–Sun, 11–6</p>
+    </div>
+    <div>
+      <h3>House</h3>
+      <a href="shop.html">Collection</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Private fittings</a>
+    </div>
+    <div>
+      <h3>Care</h3>
+      <p>Complimentary shipping over $150<br>Complimentary returns within 14 days</p>
+    </div>
+  </div>
   <div class="footer-bottom">
-    <p>© 2026 Wren &amp; Co.</p>
+    <p>© 2026 Wren &amp; Co. All rights reserved.</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
