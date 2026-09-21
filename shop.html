@@ -3,27 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop — Wren &amp; Co.</title>
+<title>Collection — Wren &amp; Co.</title>
+<meta name="description" content="Shop the Wren &amp; Co. collection: small-batch tops, bottoms, bags, and accessories.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
+<div class="announce-bar">
+  <p>Complimentary shipping on orders over $150 &nbsp;·&nbsp; Private fittings by appointment</p>
+</div>
+
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Wren &amp; Co.</a>
     <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
-      <a href="shop.html" class="is-current">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="shop.html" class="is-current">Collection</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Visit</a>
     </nav>
     <div class="nav-icons">
-      <span aria-hidden="true">🔍</span>
-      <span aria-hidden="true">🛍️</span>
+      <button class="icon-btn" data-open-search type="button" aria-label="Search the collection">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+      </button>
+      <button class="icon-btn" data-open-cart type="button" aria-label="Open bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+        <span class="bag-count" data-bag-count hidden>0</span>
+      </button>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -31,70 +40,47 @@
   </div>
 </header>
 
-<!-- ============ PAGE BANNER ============ -->
 <section class="page-banner">
-  <p class="script-tag">the full collection</p>
-  <h1>Shop</h1>
+  <p class="eyebrow">The collection</p>
+  <h1>Pieces with presence.</h1>
+  <p>Limited runs — once a size leaves the atelier, it is gone.</p>
 </section>
 
-<!-- ============ FILTERS ============ -->
 <section class="shop-page">
   <div class="filter-row" id="filterRow">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="tops">Tops</button>
-    <button class="filter-btn" data-filter="bottoms">Bottoms</button>
-    <button class="filter-btn" data-filter="accessories">Accessories</button>
-    <button class="filter-btn" data-filter="bags">Bags</button>
+    <button class="filter-btn active" data-filter="all" type="button">All</button>
+    <button class="filter-btn" data-filter="tops" type="button">Tops</button>
+    <button class="filter-btn" data-filter="bottoms" type="button">Bottoms</button>
+    <button class="filter-btn" data-filter="accessories" type="button">Accessories</button>
+    <button class="filter-btn" data-filter="bags" type="button">Bags</button>
   </div>
-
-  <div class="product-grid" id="productGrid">
-    <div class="product-card" data-category="tops">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=450&q=80" alt="Linen wrap top"></div>
-      <h3>Linen Wrap Top</h3>
-      <p class="price">$48</p>
-    </div>
-    <div class="product-card" data-category="bottoms">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=450&q=80" alt="Patterned midi skirt"></div>
-      <h3>Patterned Midi Skirt</h3>
-      <p class="price">$56</p>
-    </div>
-    <div class="product-card" data-category="accessories">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=450&q=80" alt="Layered necklaces"></div>
-      <h3>Layered Necklace Set</h3>
-      <p class="price">$32</p>
-    </div>
-    <div class="product-card" data-category="bags">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=450&q=80" alt="Woven crossbody bag"></div>
-      <h3>Woven Crossbody Bag</h3>
-      <p class="price">$64</p>
-    </div>
-    <div class="product-card" data-category="tops">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=450&q=80" alt="Embroidered blouse"></div>
-      <h3>Embroidered Blouse</h3>
-      <p class="price">$52</p>
-    </div>
-    <div class="product-card" data-category="bottoms">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=450&q=80" alt="Wide-leg linen pants"></div>
-      <h3>Wide-Leg Linen Pants</h3>
-      <p class="price">$60</p>
-    </div>
-    <div class="product-card" data-category="accessories">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=450&q=80" alt="Handmade hair clips"></div>
-      <h3>Handmade Hair Clip Set</h3>
-      <p class="price">$18</p>
-    </div>
-    <div class="product-card" data-category="bags">
-      <div class="product-photo"><img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=450&q=80" alt="Straw tote bag"></div>
-      <h3>Straw Tote Bag</h3>
-      <p class="price">$44</p>
-    </div>
-  </div>
+  <p class="shop-meta"><span id="resultCount">0</span> pieces</p>
+  <div class="product-grid" id="productGrid" data-product-grid="shop"></div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="nav-logo">Wren &amp; Co.</p>
+      <p>An independent atelier boutique in Asheville, offering small-batch clothing and objects made to last.</p>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>118 Birchwood Lane<br>Asheville, NC<br>Wed–Sun, 11–6</p>
+    </div>
+    <div>
+      <h3>House</h3>
+      <a href="shop.html">Collection</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Private fittings</a>
+    </div>
+    <div>
+      <h3>Care</h3>
+      <p>Complimentary shipping over $150<br>Complimentary returns within 14 days</p>
+    </div>
+  </div>
   <div class="footer-bottom">
-    <p>© 2026 Wren &amp; Co.</p>
+    <p>© 2026 Wren &amp; Co. All rights reserved.</p>
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>

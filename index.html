@@ -3,27 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wren &amp; Co. — Indie Fashion Boutique</title>
+<title>Wren &amp; Co. — Atelier Boutique</title>
+<meta name="description" content="Wren &amp; Co. is a small-batch atelier boutique in Asheville. Limited drops, natural fabrics, and pieces chosen with intention.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
+<div class="announce-bar">
+  <p>Complimentary shipping on orders over $150 &nbsp;·&nbsp; Private fittings by appointment</p>
+</div>
+
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Wren &amp; Co.</a>
     <nav class="nav-links" id="navLinks">
       <a href="index.html" class="is-current">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="shop.html">Collection</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Visit</a>
     </nav>
     <div class="nav-icons">
-      <span aria-hidden="true">🔍</span>
-      <span aria-hidden="true">🛍️</span>
+      <button class="icon-btn" data-open-search type="button" aria-label="Search the collection">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg>
+      </button>
+      <button class="icon-btn" data-open-cart type="button" aria-label="Open bag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg>
+        <span class="bag-count" data-bag-count hidden>0</span>
+      </button>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -31,106 +40,163 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="hero-text">
-    <p class="script-tag">new season</p>
-    <h1>New Arrivals</h1>
-    <p class="hero-sub">Hand-picked pieces for the wardrobe you actually want to wear.</p>
-    <a href="shop.html" class="btn btn-primary">Shop Now</a>
+    <p class="eyebrow">Autumn / Winter 2026</p>
+    <h1>Quiet luxury,<br>made by hand.</h1>
+    <p class="hero-sub">A considered edit of linen, wool, and gold-toned pieces — small-batch, limited, and meant to be worn for years.</p>
+    <div class="hero-actions">
+      <a href="shop.html" class="btn btn-primary">Explore the collection</a>
+      <a href="about.html" class="btn btn-ghost">The atelier</a>
+    </div>
   </div>
   <div class="hero-photo">
-    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700&q=80" alt="Model wearing a flowing indie-style outfit">
+    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80" alt="Model in a flowing editorial look">
+    <p class="hero-caption">Look 04 · Soft wool wrap</p>
   </div>
 </section>
 
-<!-- ============ FEATURE TEXT ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Small Batch</span><span>Natural Fibres</span><span>Hand Finished</span><span>Limited Drops</span><span>Private Client</span>
+    <span>Small Batch</span><span>Natural Fibres</span><span>Hand Finished</span><span>Limited Drops</span><span>Private Client</span>
+  </div>
+</div>
+
 <section class="feature-text">
   <div class="feature-photo feature-photo-left">
-    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=350&q=80" alt="Folded knitwear detail">
+    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=500&q=80" alt="Folded knitwear detail">
   </div>
   <div class="feature-copy">
-    <p class="script-tag">crafted with care</p>
-    <h2>Elegant design, expertly crafted</h2>
-    <p>Every piece at Wren &amp; Co. is chosen for how it feels as much as how it looks — natural fabrics, honest construction, and small-batch runs from makers we trust.</p>
-    <a href="about.html" class="link-underline">Our story →</a>
+    <p class="eyebrow">The house</p>
+    <h2>Designed to be kept, not replaced.</h2>
+    <p>Every piece is chosen for how it feels as much as how it looks — honest construction, natural fabrics, and ateliers we visit in person.</p>
+    <a href="about.html" class="link-underline">Read our story</a>
   </div>
   <div class="feature-photo feature-photo-right">
-    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=350&q=80" alt="Detail of a hand-woven bag">
+    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80" alt="Editorial street style detail">
   </div>
 </section>
 
-<!-- ============ WAVY BANNER ============ -->
 <section class="wavy-banner">
   <svg class="wave wave-top" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,60 C150,0 350,0 500,30 C650,60 850,60 1000,30 C1100,10 1150,10 1200,20 L1200,60 Z" fill="var(--burgundy)"/>
+    <path d="M0,60 C150,0 350,0 500,30 C650,60 850,60 1000,30 C1100,10 1150,10 1200,20 L1200,60 Z" fill="currentColor"/>
   </svg>
   <div class="wavy-inner">
-    <h2>Our best sellers are back in stock</h2>
-    <a href="shop.html" class="btn btn-cream">Shop Bestsellers</a>
+    <p class="eyebrow eyebrow-light">Members first</p>
+    <h2>Private client restocks are live</h2>
+    <p>Our most-requested silhouettes have returned in an extra-limited run.</p>
+    <a href="shop.html" class="btn btn-cream">Shop the restock</a>
   </div>
   <svg class="wave wave-bottom" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,0 C150,60 350,60 500,30 C650,0 850,0 1000,30 C1100,50 1150,50 1200,40 L1200,0 Z" fill="var(--burgundy)"/>
+    <path d="M0,0 C150,60 350,60 500,30 C650,0 850,0 1000,30 C1100,50 1150,50 1200,40 L1200,0 Z" fill="currentColor"/>
   </svg>
 </section>
 
-<!-- ============ CATEGORY STRIP ============ -->
 <section class="category-strip">
-  <div class="category">
-    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=200&q=80" alt="Woven bags">
+  <a class="category" href="shop.html?filter=bags">
+    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=280&q=80" alt="Woven bags">
     <p>Bags</p>
-  </div>
-  <div class="category">
-    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=200&q=80" alt="Beaded bracelets">
+  </a>
+  <a class="category" href="shop.html?filter=accessories">
+    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=280&q=80" alt="Gold jewelry">
     <p>Jewelry</p>
-  </div>
-  <div class="category">
-    <img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=200&q=80" alt="Hair accessories">
-    <p>Hair</p>
-  </div>
-  <div class="category">
-    <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=200&q=80" alt="Gift wrapped boxes">
-    <p>Gifts</p>
-  </div>
+  </a>
+  <a class="category" href="shop.html?filter=tops">
+    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=280&q=80" alt="Linen tops">
+    <p>Ready-to-wear</p>
+  </a>
+  <a class="category" href="shop.html?filter=accessories">
+    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=280&q=80" alt="Gift wrapping">
+    <p>Gifting</p>
+  </a>
 </section>
 
-<!-- ============ SPLIT SALE ============ -->
 <section class="split-sale">
   <div class="split-photo">
-    <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=600&q=80" alt="Model wearing a flowy indie dress">
+    <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=900&q=80" alt="Model wearing a flowy dress">
   </div>
   <div class="split-copy">
-    <p class="script-tag">for a limited time</p>
-    <h2>Shop our latest sale</h2>
-    <p>Up to 30% off select styles — dresses, tops, and accessories from our last two drops.</p>
-    <a href="shop.html" class="btn btn-primary">Shop the Sale</a>
+    <p class="eyebrow">Archive sale</p>
+    <h2>Last of the summer silhouettes</h2>
+    <p>Up to 30% off select dresses, tops, and accessories from the previous two drops. Once they leave the atelier, they do not return.</p>
+    <a href="shop.html" class="btn btn-primary">Shop the archive</a>
   </div>
 </section>
 
-<!-- ============ NEW ARRIVALS TEASER ============ -->
 <section class="arrivals-teaser">
-  <h2>New Arrivals</h2>
-  <div class="arrivals-grid">
-    <div class="arrival-item">
-      <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=80" alt="Linen wrap top">
-    </div>
-    <div class="arrival-item">
-      <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&q=80" alt="Patterned midi skirt">
-    </div>
-    <div class="arrival-item">
-      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400&q=80" alt="Layered necklaces">
-    </div>
-    <div class="arrival-item">
-      <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80" alt="Woven crossbody bag">
-    </div>
+  <div class="section-head">
+    <p class="eyebrow">Just arrived</p>
+    <h2>The new edit</h2>
   </div>
-  <a href="shop.html" class="link-underline arrivals-link">View all →</a>
+  <div class="product-grid arrivals-grid" data-product-grid="home"></div>
+  <a href="shop.html" class="link-underline arrivals-link">View the full collection</a>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<section class="lookbook">
+  <div class="lookbook-copy">
+    <p class="eyebrow">Lookbook</p>
+    <h2>AW26, photographed in the Blue Ridge.</h2>
+    <p>Shot on location with pieces from the current drop — wool, washed linen, and warm metal.</p>
+  </div>
+  <div class="lookbook-grid">
+    <figure class="look-tall">
+      <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=700&q=80" alt="Editorial portrait in natural light">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80" alt="Full-length lookbook pose">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80" alt="Detail of a tailored coat">
+    </figure>
+  </div>
+</section>
+
+<section class="press-strip">
+  <p class="eyebrow">As seen in</p>
+  <ul>
+    <li>Vogue Living</li>
+    <li>Kinfolk</li>
+    <li>The Local</li>
+    <li>Cereal</li>
+  </ul>
+</section>
+
+<section class="newsletter">
+  <p class="eyebrow">Private list</p>
+  <h2>Be first to the next drop.</h2>
+  <p>Members receive early access, restock alerts, and atelier invitations.</p>
+  <form class="newsletter-form" id="newsletterForm">
+    <label class="sr-only" for="newsletterEmail">Email</label>
+    <input id="newsletterEmail" type="email" name="email" placeholder="Email address" required>
+    <button type="submit" class="btn btn-primary">Join</button>
+  </form>
+  <p class="form-note" id="newsletterNote" aria-live="polite"></p>
+</section>
+
 <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="nav-logo">Wren &amp; Co.</p>
+      <p>An independent atelier boutique in Asheville, offering small-batch clothing and objects made to last.</p>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>118 Birchwood Lane<br>Asheville, NC<br>Wed–Sun, 11–6</p>
+    </div>
+    <div>
+      <h3>House</h3>
+      <a href="shop.html">Collection</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Private fittings</a>
+    </div>
+    <div>
+      <h3>Care</h3>
+      <p>Complimentary shipping over $150<br>Complimentary returns within 14 days</p>
+    </div>
+  </div>
   <div class="footer-bottom">
-    <p>© 2026 Wren &amp; Co.</p>
+    <p>© 2026 Wren &amp; Co. All rights reserved.</p>
     <div class="footer-links">
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
