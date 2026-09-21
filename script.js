@@ -302,7 +302,7 @@ function injectChrome() {
     <div class="overlay" data-overlay></div>
     <div class="search-panel" data-search role="dialog" aria-label="Search">
       <div class="search-bar">
-        <input id="searchInput" type="search" placeholder="Search the collection" autocomplete="off">
+        <input id="searchInput" type="text" placeholder="Search the collection" autocomplete="off">
         <button class="close-btn" type="button" data-close aria-label="Close search">×</button>
       </div>
       <div class="search-results" data-search-results></div>
@@ -388,7 +388,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.body.addEventListener("click", (event) => {
-    const add = event.target.closest("[data-add], [data-modal-add]");
+    const target = event.target instanceof Element ? event.target : event.target.parentElement;
+    if (!target) return;
+    const add = target.closest("[data-add], [data-modal-add]");
     if (add?.dataset.add || add?.dataset.modalAdd) {
       addToCart(add.dataset.add || add.dataset.modalAdd);
       document.querySelector("[data-modal]")?.classList.remove("is-open");
